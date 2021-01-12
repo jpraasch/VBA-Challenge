@@ -1,3 +1,6 @@
+Below is the code I try to get to work and couldn't get open and close to get in correctly
+
+
 Sub Stockchecker()
      
      'Each Sheet setup
