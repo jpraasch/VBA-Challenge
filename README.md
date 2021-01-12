@@ -1,4 +1,4 @@
-Below is the code I try to get to work and couldn't get open and close to get in correctly
+Below is the code I try to get to work and couldn't get open price and close price to get in correctly
 
 
 Sub Stockchecker()
