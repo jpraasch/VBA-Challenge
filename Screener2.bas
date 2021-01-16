@@ -47,15 +47,12 @@ For i = 2 To LastRow
         WS.Range("I" & SummaryTbl).Value = Stock_Name
         
         'finding percent change
-        If (openStock = 0 And closeStock = 0) Then
-                    percentchange = 0
-            ElseIf (openStock = 0 And closeStock <> 0) Then
-                    percentchange = 1
-              Else
-                    percentchange = yearchange / openStock
-                    
+        If openStock <> 0 Then
+            percentchange = yearchange / openStock
+            Else
+            percentchange = 0
              WS.Range("K" & SummaryTbl).Value = percentchange
-             WS.Range("K" & SummaryTbl).NumberFormat = "0.00%"
+             WS.Range("K" & SummaryTbl).Style = "Percent"
              End If
             
         'Adding into new column
@@ -81,8 +78,9 @@ Next i
         
       
       'autofit column width for stock totals *in every worksheet*
-        Columns("L").AutoFit
-        Columns("M").AutoFit
+        Columns("L").ColumnWidth = 16
+        Columns("K").ColumnWidth = 13
+        Columns("J").ColumnWidth = 13
         End If
         Next i
   
@@ -90,4 +88,3 @@ Next i
     
     
 End Sub
-
